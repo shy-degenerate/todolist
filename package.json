@@ -1,0 +1,38 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "I had to start somewhere, ok?",
+  "main": "app.js",
+  "scripts": {
+    "client": "node client/App.js",
+    "server": "nodemon app.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shy-degenerate/todolist.git"
+  },
+  "keywords": [
+    "todo",
+    "react",
+    "express"
+  ],
+  "author": "shy-degenerate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shy-degenerate/todolist/issues"
+  },
+  "homepage": "https://github.com/shy-degenerate/todolist#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.0",
+    "nodemon": "^2.0.15"
+  }
+}
