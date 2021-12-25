@@ -2,7 +2,8 @@
 I had to start somewhere, ok?
 ## setup
 ```
-npm install && npm run server
+npm install && npm install --prefix client
+npm run dev
 ```
 ## .env file
 ```
