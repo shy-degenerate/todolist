@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.new_todo_form {
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.text_input {
+    width: 100%;
+}
+
+.text_input input{
+    width: 100%;
+    border:none;
+    background-color: var(--even-more-darker-background);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--darker-background);
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.header_text {
+    margin-right: 2rem;
+    text-align: center;
+}

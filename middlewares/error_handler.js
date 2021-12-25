@@ -2,12 +2,11 @@ const { TodoAPIError } = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 
 function errorHandler(error, req, res, next) {
-    // TODO: Handling duplicate login error
     res.status(StatusCodes.INTERNAL_SERVER_ERROR);
 
     let err = {
         success: false,
-        message: "Something went wrong",
+        message: "something went wrong",
     };
 
     if (error instanceof TodoAPIError) {
@@ -24,12 +23,14 @@ function errorHandler(error, req, res, next) {
     if (error.name === "CastError") {
         err = { message: error.name, errors: {} };
         err.errors[error.path] = `Cannot cast '${error.value}' to ${error.kind}`;
+        res.status(StatusCodes.BAD_REQUEST);
     }
-    // Duplicate username
     if (error.code && error.code === 11000) {
         err = { message: "duplicate username", errors: {} };
-        err.errors.username = `User ${error.keyValue.username} alread exists`;
+        err.errors.username = `user ${error.keyValue.username} already exists`;
+        res.status(StatusCodes.BAD_REQUEST);
     }
+
     res.json({ ...err });
 }
 

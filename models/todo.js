@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const TodoSchema = new mongoose.Schema({
    text: {
        type: String,
-       required: [true, "Todo text must be provided"],
-       maxlength: [50, "Todo text must be less than 50 characters"],
+       required: [true, "todo text must be provided"],
+       maxlength: [300, "todo text must be less than 300 characters"],
    }, 
    completed: {
        type: Boolean, 
-       required: [true, "Is your task completed?"],
+       required: [true, "is your task completed?"],
    },
    author: {
        type: mongoose.Types.ObjectId,

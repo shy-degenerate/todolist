@@ -1,0 +1,33 @@
+.todo {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--nice-green);
+    border-left: 1px solid var(--nice-green);
+    background-color: var(--even-more-darker-background);
+    overflow-wrap: anywhere;
+}
+
+.text p{
+    font-size: 1.3rem;    
+   font-weight: bold; 
+}
+
+.completed input {
+    appearance: none;
+    background-color: #fafafa;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #cacece;
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--even-more-darker-background);
+}
+
+.completed input:checked {
+    background-color: var(--nice-green);
+}
