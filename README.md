@@ -14,7 +14,7 @@ JWT_LIFETIME=<your-jwt-lifetime>
 DEV=<true-or-false>
 ```
 ## client/config.json
-```json
+```js
 {
     "API_URL": "<your-api-url>" // for example: http://localhost:5000
 }
