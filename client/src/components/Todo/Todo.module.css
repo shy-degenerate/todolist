@@ -1,4 +1,5 @@
 .todo {
+    cursor: pointer;
     display: flex;
     width: 600px;
     justify-content: space-between;
@@ -12,9 +13,19 @@
     overflow-wrap: anywhere;
 }
 
+.todo:hover {
+    border-bottom: 1px solid var(--nice-blue);
+    border-left: 1px solid var(--nice-blue);
+}
+
 .text p{
     font-size: 1.3rem;    
-   font-weight: bold; 
+    font-weight: bold; 
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
 }
 
 .completed input {
@@ -23,11 +34,20 @@
     padding: 7px;
     border-radius: 3px;
     border: 1px solid #cacece;
-    display: inline-block;
+    display: block;
     cursor: pointer;
     background-color: var(--even-more-darker-background);
 }
 
 .completed input:checked {
     background-color: var(--nice-green);
+}
+
+.delete_icon {
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.delete_icon:hover {
+    color: red;
 }

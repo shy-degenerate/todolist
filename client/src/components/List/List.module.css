@@ -8,9 +8,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .text_input {
     width: 100%;
+    margin-right: 15px;
 }
 
 .text_input input{
@@ -20,12 +23,21 @@
 }
 
 .list {
+    max-height: 75%;
+    user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
     background-color: var(--darker-background);
     border-radius: 10px;
+}
+
+.todos {
+    scrollbar-width: none; 
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -36,4 +48,17 @@
 .header_text {
     margin-right: 2rem;
     text-align: center;
+}
+
+.error_message {
+    color: red;
+    margin-bottom: 0.3rem;
+}
+
+.delete_button {
+    margin-left: 5px;
+}
+
+.delete_button button {
+    background-color: var(--nice-red);
 }

@@ -1,15 +1,27 @@
 import React from "react";
 import { useState } from "react";
 import s from "./Login.module.css";
+import TodoAPI from "../../api";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [signUp, setSignUp] = useState();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        // TODO: interaction with api 
+
+        try {
+            const response = await TodoAPI.auth(username, password, signUp ? "register" : "login");
+            localStorage.setItem("token", response.token);
+            localStorage.setItem("username", username);
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
     return (
@@ -35,6 +47,7 @@ export default function Login() {
                                 value={signUp ? "already have an account?" : "need an account for this shit?"} />
                         </div>
                     </div>
+                    <div className={s.error_message}><p>{error}</p></div>
                 </form>
             </div>
         </div>
